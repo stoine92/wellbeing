@@ -1,0 +1,38 @@
+@use '../../styles/mixins.scss';
+@use '../../styles/breakpoints.scss' as *;
+
+.pageHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-l) var(--space-l);
+    align-self: stretch;
+
+    @media (min-width: $media-xl) {
+        padding: var(--space-l) 0rem;
+    }
+
+    &_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: var(--main-container-max-width);
+    }
+
+    &_account {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        flex: 1;
+        gap: var(--space-x);
+
+        &-title {
+            @include mixins.text-xl-bold;
+            color: var(--headers-color);
+        }
+    }
+}

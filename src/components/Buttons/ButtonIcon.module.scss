@@ -1,0 +1,41 @@
+.buttonIcon {
+    display: inline-flex;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: all var(--transition-color) ease;
+
+    &_icon {
+      display: flex;
+      font-size: calc( var(--font-size-m) + 0.5rem );
+      color: inherit;
+    }
+  
+    &:hover, &:focus {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      border-color: var(--color-primary-dark);
+    }
+    &:active {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    &:focus-visible {
+      border: none;
+      outline: 2px solid var(--color-accent-blue);
+      outline-offset: 2px;
+    }
+
+    &--noBg {
+        background: none;
+        color: var(--color-primary-dark);
+        border: none;
+    }
+    
+  }

@@ -1,0 +1,113 @@
+// Normal text mixins
+@mixin text-xs {
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-x {
+  font-size: var(--font-size-x);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-s {
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-m {
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-l {
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-xl {
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-2xl {
+  font-size: var(--font-size-2xl);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+@mixin text-3xl {
+  font-size: var(--font-size-3xl);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+// Bold text mixins
+@mixin text-xs-bold {
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-x-bold {
+  font-size: var(--font-size-x);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-s-bold {
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-m-bold {
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-l-bold {
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-xl-bold {
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-2xl-bold {
+  font-size: var(--font-size-2xl);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}
+
+@mixin text-3xl-bold {
+  font-size: var(--font-size-3xl);
+  font-style: normal;
+  font-weight: var(--bold);
+  line-height: 120%;
+}

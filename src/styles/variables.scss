@@ -1,0 +1,55 @@
+:root {
+    // Base colors
+    --color-white: #fff;
+    --color-black: #000;
+
+    // Spacing
+    
+    --space-xs: clamp(0.125rem, 0.077rem + 0.192vw, 0.25rem);
+    --space-x: clamp(0.25rem, 0.154rem + 0.385vw, 0.5rem);
+    --space-m: clamp(0.5rem, 0.404rem + 0.385vw, 0.75rem);
+    --space-l: clamp(0.85rem, 0.654rem + 0.385vw, 1rem);
+    --space-xl: clamp(1.25rem, 0.808rem + 0.769vw, 1.5rem);
+    --space-2xl: clamp(1.5rem, 1.308rem + 0.769vw, 2rem);
+    --space-3xl: clamp(2rem, 1.615rem + 1.538vw, 3rem);
+    
+    --font-size-xs: clamp(0.3rem, 0.243rem + 0.119vw, 0.35rem);
+    --font-size-x: clamp(0.55rem, 0.436rem + 0.238vw, 0.65rem);
+    --font-size-s: clamp(0.75rem, 0.436rem + 0.238vw, 0.8rem);
+    --font-size-m: clamp(0.9rem, 0.786rem + 0.238vw, 1rem);
+    --font-size-l: clamp(1rem, 0.904rem + 0.385vw, 1.25rem);
+    --font-size-xl: clamp(1.4rem, 1.286rem + 0.238vw, 1.5rem);
+    --font-size-2xl: clamp(1.88rem, 1.743rem + 0.286vw, 2rem);
+    --font-size-3xl: clamp(2.05rem, 1.729rem + 0.857vw, 2.5rem);
+
+    // Button
+    --color-primary: #0891B2;
+    --color-primary-dark: #0E7490; 
+    --color-accent-blue: #6366F1;
+    --color-bg-light: #F0FAFA;
+
+    // Colours
+
+    --headers-color: #091C3D;
+    --text-color: #34495e;
+    --text-color-lighter: #727676;
+    --collapsible-bg-color: #e4e6e9;
+
+
+    // Commons 
+    --border-radius: 5px;
+    --border-color: #bbbebe;
+
+    --bold: 600;
+    --transition-color: color 0.3s ease;
+
+    --transition-speed: 0.3s;
+
+    --transition-speed-skeleton: 2s;
+
+    --main-container-max-width: 90rem;
+    --aside-container-max-width: 25rem;
+
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  }

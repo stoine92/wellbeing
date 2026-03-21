@@ -1,0 +1,29 @@
+@use '../../styles/breakpoints.scss' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: var(--space-l);
+    margin: 0 auto;
+    
+    align-items: center;
+    
+    @media (min-width: $media-xl) {
+        gap: var(--space-xl);
+    }
+}
+
+.content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    max-width: var(--main-container-max-width);
+    width: 100%;
+    padding: 0 var(--space-x);
+
+    @media (min-width: $media-xl) {
+        padding: 0;
+    }
+}

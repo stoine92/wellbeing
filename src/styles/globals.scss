@@ -1,0 +1,46 @@
+@use './variables.scss';
+@use './mixins.scss';
+
+// Import Google Fonts
+// @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgb(246, 243, 243);
+    color: var(--text-color, #222);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  all: unset;
+  display: inline;
+  font: inherit;
+  color: inherit;
+}
+
+// // All text elements inherit Playfair Display by default
+p, span, div, a, button, input, textarea, li {
+  font-family: inherit;
+}
+
+// // For elements that need Source Sans Pro
+.body-font {
+  font-family: 'Source Sans Pro', sans-serif;
+}

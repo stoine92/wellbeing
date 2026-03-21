@@ -1,0 +1,25 @@
+.buttonLink {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    display: flex;
+    gap: var(--space-x);
+    align-items: center;
+    text-decoration: underline;
+    color: var(--color-primary-dark);
+
+    &:hover {
+        color: var(--color-accent-blue);
+        
+    }
+    &:active {
+        color: var(--color-primary-dark);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent-blue);
+        outline-offset: 2px;
+        border-radius: var(--border-radius);
+    }
+  }
