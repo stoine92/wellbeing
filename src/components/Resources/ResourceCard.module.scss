@@ -1,0 +1,56 @@
+@use "../../styles/mixins.scss";
+
+
+.resourceCard {
+    display: flex;
+    padding: var(--space-l);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    gap: var(--space-m);
+
+    &_img {
+        width: 15rem;
+        height: 12rem;
+        flex-shrink: 0;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xl);
+        flex: 1;
+    }
+    
+    &_headings {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+
+        &-title {
+            display: flex;
+            color: var(--headers-color);
+            @include mixins.text-xl-bold;
+        }
+
+        &-description {
+            color: var(--text-color);
+            @include mixins.text-m;
+        }
+    }
+    
+    &_tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-m);
+
+        &-tag {
+            padding: var(--space-xs) var(--space-m);
+            border-radius: 2rem;
+            background-color: var(--color-bg-light);
+            color: var(--color-primary);
+            @include mixins.text-m;
+        }
+    }
+}

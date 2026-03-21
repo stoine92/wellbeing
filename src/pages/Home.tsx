@@ -3,6 +3,7 @@ import Section from "../components/Layout/Section";
 import { fetchResources } from "../lib/fetchResources";
 import type { Resource } from "../lib/fetchResources";
 import { useQuery } from "@tanstack/react-query";
+import Resources from "../components/Resources/Resources";
 
 
 function Home () {
@@ -11,8 +12,21 @@ function Home () {
         queryFn: () => fetchResources(),
         queryKey: ["resources"],
     });
-
-    console.log(resources);
+    
+    if(resources?.length === 0 && !isLoading) {
+        return (
+            <Container>
+                <Section>
+                    <Section.Main>
+                        <Section.Head 
+                            title="No documents found" 
+                            subtitle="Please add some documents to get started"
+                        />
+                    </Section.Main>
+                </Section>
+            </Container>
+        )
+    }
 
     return (
        <Container>
@@ -23,12 +37,12 @@ function Home () {
 
                 <Section.Main>
                   <Section.Head 
-                    title="Example Title" 
-                    subtitle="Example Subtitle"
+                    title="Wellbeing Resources" 
+                    subtitle={`Showing ${resources ? resources.length : 0} resource${resources && resources.length !== 1 ? "s" : ""}`}
                   />
                   <Section.Border />
                   <Section.Content>
-                    <span>Section Content</span>
+                    <Resources resources={resources ?? []} isLoading={isLoading} />
                   </Section.Content>
                 </Section.Main>
             </Section>
