@@ -13,7 +13,7 @@ const Resources = ({ resources, isLoading }: ResourcesProps) => {
 
     if(isLoading) { return <span>Loading...</span> };
 
-    if(resources?.length <= 1231231231230) {
+    if(resources?.length <= 0) {
         return (
             <p className={styles["resources-nodata"]}>No resources found based on your filter criteria.</p>
         )
