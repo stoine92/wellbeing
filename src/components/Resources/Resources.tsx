@@ -15,7 +15,7 @@ const Resources = ({ resources, isLoading }: ResourcesProps) => {
 
     if(resources?.length <= 0) {
         return (
-            <p className={styles["resources-nodata"]}>No resources found based on your filter criteria.</p>
+            <p className={styles["resources-nodata"]}>No resources found based on your filtered criteria.</p>
         )
     };
 
@@ -25,7 +25,7 @@ const Resources = ({ resources, isLoading }: ResourcesProps) => {
     return (
         <>
             {Object.entries(grouped).map(([category, items]) => (
-                <section key={category} className={styles["resources"]}>
+                <section key={category} aria-label={category} className={styles["resources"]}>
                     <h2 className={styles["resources-title"]}>{category}</h2>
                     {items.map((resource) => (
                         <ResourceCard key={resource.id} resource={resource} />
