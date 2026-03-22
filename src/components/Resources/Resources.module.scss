@@ -1,0 +1,13 @@
+@use "../../styles/mixins.scss";
+
+
+.resources {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    &-title {
+        color: var(--headers-color);
+        @include mixins.text-2xl-bold;
+    }
+}

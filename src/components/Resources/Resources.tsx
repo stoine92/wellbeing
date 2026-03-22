@@ -1,5 +1,7 @@
 import type { Resource } from "../../lib/fetchResources";
 import ResourceCard from "./ResourceCard";
+import { groupByCategory } from "../utils/groupByCategory";
+import styles from "./Resources.module.scss"
 
 
 interface ResourcesProps {
@@ -15,12 +17,20 @@ const Resources = ({ resources, isLoading }: ResourcesProps) => {
         return (
             <p>No resources found based on your filter criteria.</p>
         )
-    }
+    };
+
+    const grouped = groupByCategory(resources);
+
 
     return (
         <>
-            {resources.map((resource) => (
-                <ResourceCard key={resource.id} resource={resource} />
+            {Object.entries(grouped).map(([category, items]) => (
+                <section key={category} className={styles["resources"]}>
+                    <h2 className={styles["resources-title"]}>{category}</h2>
+                    {items.map((resource) => (
+                        <ResourceCard key={resource.id} resource={resource} />
+                    ))}
+                </section>
             ))}
         </>
     );
