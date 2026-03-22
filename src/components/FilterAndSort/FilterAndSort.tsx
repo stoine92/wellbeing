@@ -1,30 +1,49 @@
 import InputField from "../Form/InputField";
 import SelectField from "../Form/SelectField";
-// import type { useFilterReturn } from "../hooks/useFilter";
-// import type { SortKeyInterface, SortDirectionInterface } from "../hooks/useSortOrder";
-// import type { Dispatch } from "react";
+import type { SortKey, SortDirection } from "../hooks/useSortOrder";
 
+interface SortKeyInterface {
+    value: SortKey;
+}
+
+interface SortDirectionInterface {
+    value: SortDirection;
+}
 
 interface FilterAndSortProps {
     titleFilter: string;
     tagFilter: string;
     setTitleFilter: (value: string) => void;
     setTagFilter: (value: string) => void;
+    sortKey: SortKeyInterface;
+    sortDirection: SortDirectionInterface;
+    setSortKey: (key: SortKeyInterface) => void;
+    setSortDirection: (direction: SortDirectionInterface) => void;
 }
 
 
-// const FilterAndSort: FC<FilterAndSortProps> = ({ filter, setFilter, sortKey, setSortKey, sortDirection, setSortDirection }) => {
-const FilterAndSort = ({ titleFilter, tagFilter, setTitleFilter, setTagFilter }: FilterAndSortProps) => {
+const FilterAndSort = ({ titleFilter, tagFilter, setTitleFilter, setTagFilter, sortKey, sortDirection, setSortKey, setSortDirection}: FilterAndSortProps) => {
     return (
         <>
             <SelectField
                 label="Sort by"
                 name="sortKey"
-                // value={sortKey.value}
-                // onChange={(e) => setSortKey({ value: e.target.value as "name" | "added" })}÷
+                value={sortKey.value}
+                onChange={(e) => setSortKey({ value: e.target.value as "category" | "date" })}
                 options={[
                     {code: "category", description: "Category Alphabetically"},
                     {code: "date", description: "Date Added"}
+                ]}
+            />
+
+            <SelectField
+                label="Sort direction"
+                name="sortDirection"
+                value={sortDirection.value}
+                onChange={(e) => setSortDirection({ value: e.target.value as "asc" | "desc" })}
+                options={[
+                    {code: "asc", description: "Ascending"},
+                    {code: "desc", description: "Descending"}
                 ]}
             />
 

@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import Resources from "../components/Resources/Resources";
 import FilterAndSort from "../components/FilterAndSort/FilterAndSort";
 import { useFilter } from "../components/hooks/useFilter";
+import { useSortOrder } from "../components/hooks/useSortOrder";
 
 
 function Home () {
@@ -16,7 +17,19 @@ function Home () {
     });
 
     const { titleFilter, tagFilter, setTitleFilter, setTagFilter, filteredResources } = useFilter(resources);
+
+    const { sortedResources, sortKey, sortDirection, setSortKey, setSortDirection } = useSortOrder(filteredResources);
      
+    const filterAndSortProps = {
+        titleFilter,
+        tagFilter,
+        setTitleFilter,
+        setTagFilter,
+        sortKey,
+        sortDirection,
+        setSortKey,
+        setSortDirection
+    }
     
     if(resources?.length === 0 && !isLoading) {
         return (
@@ -37,18 +50,18 @@ function Home () {
        <Container>
             <Section>
                 <Section.Side>
-                  <FilterAndSort titleFilter={titleFilter} tagFilter={tagFilter} setTitleFilter={setTitleFilter} setTagFilter={setTagFilter} />
+                  <FilterAndSort {...filterAndSortProps} />
                 </Section.Side>
 
                 <Section.Main>
                   <Section.Head 
                     title="Wellbeing Resources" 
-                    subtitle={`Showing ${filteredResources ? filteredResources.length : 0} resource${filteredResources && filteredResources.length !== 1 ? "s" : ""}`}
-                    DialogContent={<FilterAndSort titleFilter={titleFilter} tagFilter={tagFilter} setTitleFilter={setTitleFilter} setTagFilter={setTagFilter} />}
+                    subtitle={`Showing ${sortedResources ? sortedResources.length : 0} resource${sortedResources && sortedResources.length !== 1 ? "s" : ""}`}
+                    DialogContent={<FilterAndSort {...filterAndSortProps} />}
                   />
                   <Section.Border />
                   <Section.Content>
-                    <Resources resources={filteredResources ?? []} isLoading={isLoading} />
+                    <Resources resources={sortedResources ?? []} isLoading={isLoading} />
                   </Section.Content>
                 </Section.Main>
             </Section>
