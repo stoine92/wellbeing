@@ -8,7 +8,9 @@
     border: 1px solid var(--border-color);
     cursor: pointer;
     color: var(--color-primary);
-    transition: all var(--transition-color) ease;
+    transition: background-color var(--transition-speed) ease, 
+            color var(--transition-speed) ease,
+            border-color var(--transition-speed) ease;
 
     &_icon {
       display: flex;

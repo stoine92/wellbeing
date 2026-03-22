@@ -36,14 +36,14 @@ const Dialog = ({ open, title, children, className, trigger }: DialogProps) => {
             <D.Portal>
                 <D.Overlay className={styles["dialog_overlay"]}>
                     <D.Content className={contentClasses.join(" ")}>
-                        {title && (
+                        
                             <div className={styles["dialog_header"]}>
-                                <D.Title className={styles["dialog_header-title"]}>{title}</D.Title>
-                                <D.Close asChild>
+                             {title && (<D.Title className={styles["dialog_header-title"]}>{title}</D.Title>)}
+                                <D.Close asChild className={styles["dialog_header-close"]}>
                                     <ButtonIcon icon={HighlightOffSharpIcon} noBg />
                                 </D.Close>
                             </div>
-                        )}
+                   
                         <Section.Border />
                         <VisuallyHidden.Root><D.Title></D.Title></VisuallyHidden.Root>
                         <VisuallyHidden.Root><D.Description></D.Description></VisuallyHidden.Root>

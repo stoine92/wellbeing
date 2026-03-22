@@ -36,6 +36,11 @@
         &-title {
           color: var(--headers-color);
           @include mixins.text-xl-bold;
+          flex: 1;
+        }
+
+        &-close {
+            margin-left: auto;
         }
     }
 
