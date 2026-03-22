@@ -1,18 +1,30 @@
 @use "../../styles/mixins.scss";
+@use "../../styles/breakpoints.scss" as *;
 
 
 .resourceCard {
     display: flex;
+    flex-direction: column;
     padding: var(--space-l);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     gap: var(--space-m);
-    height: var(--card-height);
-    
+
+    @media (min-width: $media-md) {
+        flex-direction: row;
+        gap: var(--space-m);
+        height: var(--card-height);
+    }
+
     &_image {
-        width: 15rem;
         flex-shrink: 0;
         align-self: stretch;
+        height: 15rem;
+
+        @media (min-width: $media-md) {
+            width: 15rem;
+            height: auto;
+        }
 
         &-img {
             width: 100%;
@@ -70,9 +82,13 @@
         &-main {
             display: flex;
             position: relative;
-            height: 20rem;
+            height: 10rem;
             overflow: hidden;
             border-radius: var(--border-radius);
+
+            @media (min-width: $media-md) {
+                height: 20rem;
+            }
         }
 
         &-image {
